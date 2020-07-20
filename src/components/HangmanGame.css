@@ -1,0 +1,124 @@
+.keyboard-row:after {
+    clear: none;
+    content: "";
+    display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.yellow-square {
+  background: #ffee00;
+  border: 1px solid #000000;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+  box-sizing: content-box;
+}
+
+.purple-square {
+  background: #902299;
+  color: #ffffff;
+  border: 1px solid #000000;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+  box-sizing: content-box;
+}
+
+.reset-button {
+  background: #0059ff;
+  color: #ffffff;
+  border: 1px solid #000000;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin: 1px;
+  padding: 1px;
+  margin-top: 50px;
+  text-align: center;
+  width: 100px;
+  box-sizing: content-box;
+}
+
+.kbd-navigation .square:focus {
+  background: #55ff;
+}
+
+.hangman-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.hangman-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 18pt;
+  margin: 20px;
+}
+
+.hangman-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 20px;
+}
+
+.hangman-controls {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.hangman-consequences {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px;
+}
+
+.hangman-status {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.message {
+  display: flex;
+  font-size: 14pt;
+  font-weight: 300;
+  justify-content: center;
+}
+
+.hangman-drawing {
+  display: flex;
+  margin-top: -80px;
+  color: #222222;
+  align-items: flex-start;
+}

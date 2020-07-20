@@ -1,0 +1,20 @@
+.HangmanDrawing-character {
+    fill: none;
+    stroke: #00b359;
+    stroke-width: 10px;
+    stroke-linecap: round;
+}
+
+.HangmanDrawing-post {
+    fill: none;
+    stroke: #00b359;
+    stroke-width: 10px;
+    stroke-linecap: round;
+    border-radius: 5px;
+}
+
+.HangmanDrawing-head {
+    fill: #1aff8c;
+    stroke: #00b359;
+    stroke-width: 10px;
+}
