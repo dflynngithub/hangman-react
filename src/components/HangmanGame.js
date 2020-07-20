@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import dictionary from './Dictionary'
 import hangmanDrawing from './HangmanDrawing';
+import _ from 'underscore'
 import './HangmanGame.css';
 
 // STILL HAVE TO:
@@ -18,7 +19,7 @@ class HangmanGame extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      secretWord: randomWord(),
+      secretWord: _.sample(dictionary),
       numberOfWrongGuesses: 0,
       guessed: new Set([])
     }
@@ -72,7 +73,7 @@ class HangmanGame extends Component {
   // Reset the game
   resetButton = () => {
     this.setState({
-      secretWord: randomWord(),
+      secretWord: _.sample(dictionary),
       numberOfWrongGuesses: 0,
       guessed: new Set([])
     })
@@ -151,18 +152,6 @@ class HangmanGame extends Component {
     );
 
   }
-}
-
-// Generate a random index from dictionary
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
-
-// Generate a random word from the dictionary
-function randomWord() {
-  var dictionaryLength = dictionary.length;
-  var randomIndex = getRandomInt(dictionaryLength);
-  return dictionary[randomIndex];
 }
 
 // 
