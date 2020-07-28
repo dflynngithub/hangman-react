@@ -4,10 +4,6 @@ import hangmanDrawing from './HangmanDrawing';
 import _ from 'underscore'
 import './HangmanGame.css';
 
-// STILL HAVE TO:
-// > SORT GUESSED LETTERS BY CORRECT AND INCORRECT (PROBABLY ONLY USE THE LATTER)
-// > STOP THE GAME WHEN PLAYER HAS LOST OR WON
-
 class HangmanGame extends Component {
 
   // Default properties for this component
@@ -31,7 +27,7 @@ class HangmanGame extends Component {
     let secretWordUpper = this.state.secretWord.toUpperCase().split("");
     // Make a button for each constituent letter
     return secretWordUpper.map(letter => (
-      <button className="purple-square">
+      <button className="base-square purple">
         {this.state.guessed.has(letter)? letter: ' '}
       </button>
     ));
@@ -44,7 +40,7 @@ class HangmanGame extends Component {
     // Make a button for each constituent letter
     return letters.map(letter => (
       <button 
-        className="yellow-square"
+        className="base-square yellow"
         key={letter}
         value={letter}
         onClick={this.handleGuess}
@@ -84,9 +80,7 @@ class HangmanGame extends Component {
     // Game is lost if too many mistakes are made
     const gameLost = this.state.numberOfWrongGuesses >= this.props.maxWrongGuesses;
     // Game is won if every letter is correctly guessed
-    // const gameWon = [...this.state.guessed].join("") === this.state.secretWord.toUpperCase();
-    const gameWon = checkAllLettersHaveBeenGuessed(this.state.guessed,this.state.secretWord);
-    // const gameWon = numberOfLettersLeftToFind === 0? true : false;
+    const gameWon = numberOfLettersLeftToFind(this.state.guessed,this.state.secretWord) === 0? true : false;
     // Input-output button clicker
     let guessingZone = this.generateGuessingZone();
     // Input-output button clicker
@@ -120,7 +114,7 @@ class HangmanGame extends Component {
             <p>
               {alphabetClicker}
             </p>
-            <button className="reset-button" onClick={this.resetButton}>
+            <button className="base-square reset" onClick={this.resetButton}>
               Reset
             </button>
           </div>
@@ -154,16 +148,16 @@ class HangmanGame extends Component {
   }
 }
 
-// 
-function checkAllLettersHaveBeenGuessed(guessed,secretWord) {
+function numberOfLettersLeftToFind(guessed,secretWord) {
+  var counter = 0;
   for (var i=0; i<secretWord.length; i++) {
-    var letter = secretWord[i];
+    const letter = secretWord[i].toUpperCase();
     // check if letter is in "guessed" set -- if it isn't, add to the counter
     if(!guessed.has(letter)) {
-      return false;
+      counter += 1;
     }
   }
-  return true;
+  return counter;
 }
 
 export default HangmanGame;

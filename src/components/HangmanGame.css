@@ -8,8 +8,7 @@
   margin-bottom: 10px;
 }
 
-.yellow-square {
-  background: #ffee00;
+.base-square {
   border: 1px solid #000000;
   float: left;
   font-size: 24px;
@@ -24,38 +23,21 @@
   box-sizing: content-box;
 }
 
-.purple-square {
+.base-square.yellow {
+  background: #ffea00;
+}
+
+.base-square.purple {
   background: #902299;
-  color: #ffffff;
-  border: 1px solid #000000;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 34px;
-  box-sizing: content-box;
 }
 
-.reset-button {
+.base-square.reset {
   background: #0059ff;
   color: #ffffff;
-  border: 1px solid #000000;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
   margin: 1px;
   padding: 1px;
   margin-top: 50px;
-  text-align: center;
   width: 100px;
-  box-sizing: content-box;
 }
 
 .kbd-navigation .square:focus {
